@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Primos y Búsqueda de Palabra</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <div class="container">
+    <h2>Ejercicio con Web Workers</h2>
+
+    <label for="limite">Número límite para primos:</label>
+    <input type="number" id="limite" value="50">
+
+    <br><br>
+    <label for="parrafo">Párrafo:</label><br>
+    <textarea id="parrafo" rows="5" cols="50">Este es un párrafo de ejemplo donde se puede buscar una palabra específica.</textarea>
+
+    <br><br>
+    <label for="palabra">Palabra a buscar:</label>
+    <input type="text" id="palabra" value="ejemplo">
+
+    <br><br>
+    <button id="generar">Generar</button>
+
+    <h3>Resultados:</h3>
+    <div id="salida"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

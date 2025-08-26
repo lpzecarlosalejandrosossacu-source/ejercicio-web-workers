@@ -1,0 +1,124 @@
+/* 🎪 Estilo Circo 3D */
+:root {
+  --color-primario: #ff3838;
+  --color-secundario: #ff9f1a;
+  --color-terciario: #17c0eb;
+  --color-fondo: radial-gradient(circle at top, #ffdd59, #ff4d6d, #3ae374);
+  --color-blanco: #fff;
+  --color-oscuro: #2f3542;
+}
+
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', 'Poppins', cursive;
+  background: var(--color-fondo);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  min-height: 100vh;
+  color: var(--color-blanco);
+}
+
+/* Caja principal */
+.container {
+  background: rgba(0,0,0,0.6);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  animation: aparecer 1s ease-in-out;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Títulos con efecto 3D y luces */
+h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--color-primario);
+  text-shadow: 3px 3px 0 #000, 6px 6px 0 var(--color-secundario);
+  animation: luces 1.5s infinite alternate;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: var(--color-terciario);
+  text-shadow: 2px 2px 0 #000, 4px 4px 0 var(--color-secundario);
+  margin-top: 30px;
+}
+
+@keyframes luces {
+  0% { color: var(--color-primario); text-shadow: 3px 3px 0 #000, 6px 6px 0 var(--color-secundario); }
+  50% { color: var(--color-terciario); text-shadow: 3px 3px 0 #000, 6px 6px 0 #ff9ff3; }
+  100% { color: #f9ca24; text-shadow: 3px 3px 0 #000, 6px 6px 0 #6c5ce7; }
+}
+
+/* Inputs y textarea */
+input[type="number"],
+input[type="text"],
+textarea {
+  width: 90%;
+  padding: 12px;
+  margin: 10px auto;
+  display: block;
+  border-radius: 12px;
+  border: 3px solid var(--color-secundario);
+  font-size: 1rem;
+  outline: none;
+  background: linear-gradient(145deg, #fff, #f1f2f6);
+  color: var(--color-oscuro);
+  box-shadow: inset 3px 3px 6px #dfe6e9, inset -3px -3px 6px #ffffff;
+  transition: transform 0.2s ease-in-out;
+}
+
+input:focus,
+textarea:focus {
+  transform: scale(1.05);
+  border-color: var(--color-primario);
+}
+
+/* Botón con efecto circo */
+button {
+  background: linear-gradient(135deg, var(--color-primario), var(--color-secundario), var(--color-terciario));
+  border: none;
+  border-radius: 20px;
+  padding: 14px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--color-blanco);
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 5px 0 #000, 0 0 15px rgba(255,255,255,0.6);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 0 #000, 0 0 25px rgba(255,255,255,0.9);
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 3px 0 #000;
+}
+
+/* Resultados */
+#salida {
+  margin-top: 20px;
+  padding: 20px;
+  background: linear-gradient(145deg, #1e90ff, #3742fa);
+  border-radius: 15px;
+  font-size: 1.1rem;
+  color: #f5f6fa;
+  box-shadow: inset 3px 3px 8px rgba(0,0,0,0.5);
+  text-align: left;
+  min-height: 100px;
+}
